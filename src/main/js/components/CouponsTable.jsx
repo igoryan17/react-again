@@ -1,16 +1,15 @@
 import React from 'react'
-import Coupon from "./Coupon";
+import Coupon from "./Coupon.jsx";
 
-const CouponTable = React.createClass({
+class CouponTable extends React.Component {
    render() {
-       const coupons = this.props.coupons.map(coupon => <Coupon coupon={coupon}></Coupon>);
-       return <table>
-           <tbody>
-           <tr>Id</tr>
-           <tr>Code</tr>
-           <tr>Description</tr>
-           <tr>Price</tr>
-           </tbody>
-       </table>
+       console.log(`coupons is ${this.props.coupons}`);
+       return (
+           <div>
+           {this.props.coupons.map(coupon => <Coupon key={coupon.id} coupon={coupon}/>)}
+           </div>
+       );
    }
-});
+}
+
+export default CouponTable;

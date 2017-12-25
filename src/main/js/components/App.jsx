@@ -1,21 +1,12 @@
 import React from 'react'
-import CouponTable from './CouponsTable'
+import Coupon from "./Coupon.jsx";
 
-const App = React.createClass({
-    componentWillMount() {
-        this.setState({
-            coupons: [{
-                id: 1488,
-                code: "1488",
-                description: "podliva",
-                price: 1488
-            }]
-        });
-    },
-
+class App extends React.Component {
     render() {
         return <div>
-            <CouponTable coupons={this.state.coupons}/>
+            <Coupon id="1488" code="1488" description="podliva" price="1488" />
         </div>
     }
-});
+}
+
+export default App;
